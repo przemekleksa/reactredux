@@ -6,10 +6,11 @@ export class Main extends Component {
         age: 34
     }
 
-    handleClick(e){
-        // this.setState({
-        //     name: "Ela"
-        // })
+    handleClick = (e) => {
+        this.setState({
+            name: "Ela",
+            age: 54
+        })
         console.log(e.target)
         
     }
@@ -30,7 +31,7 @@ export class Main extends Component {
                 <p>Random number: {Math.round(Math.random() * 10)}
                 </p>
                 <h2>My name is {this.state.name}. I'm {this.state.age} years old.</h2> 
-                <button onClick={this.handleClick}>Click Me</button>
+                <button onClick={this.handleClick}>Change my name</button>
                 <button onMouseOver={this.handleMouseOver}>Hover me</button>
                 <p onCopy={this.handleCopy}>What we think, we become</p>
             </div>
