@@ -7,7 +7,7 @@ export class Lists extends Component {
             return (
                 <div className='hero' key={hero.id}>
                     <p>{hero.name} is {hero.color} and his occupation is {hero.occupation}</p>
-                </div>  
+                </div>
             )
         })
         return (
