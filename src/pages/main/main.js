@@ -4,6 +4,7 @@ import Form from '../../components/forms/form';
 import Props from '../../components/props/props';
 import Lists from '../../components/lists/lists';
 import StatelessComp from '../../components/statelessComponents/statelessComp';
+import AddHero from '../../components/addHero/addHero';
 
 export class Main extends Component {
 
@@ -15,6 +16,25 @@ export class Main extends Component {
         ]
     }
 
+    addHero = (newHero) => {
+        newHero.id = Math.random()*10;
+        console.log(newHero)
+        let heroes = [...this.state.heroes, newHero]
+        this.setState({
+            heroes: heroes
+        })
+    }
+
+    deleteHero = (id) => {
+        console.log(id)
+        let heroes = this.state.heroes.filter((hero)=>{
+            return hero.id !== id
+        })
+        this.setState({
+            heroes: heroes
+        })
+    }
+
     render() {
         return (
             <div>
@@ -22,7 +42,8 @@ export class Main extends Component {
                 <Form/>
                 <Props name="Mario" color="red" occupation="plumber"/>
                 <Lists heroes={this.state.heroes}/> */}
-                <StatelessComp heroes={this.state.heroes}/>
+                <StatelessComp heroes={this.state.heroes} deleteHero={this.deleteHero}/>
+                <AddHero addHero={this.addHero} />
             </div>
         )
     }
