@@ -5,6 +5,7 @@ import Props from '../../components/props/props';
 import Lists from '../../components/lists/lists';
 import StatelessComp from '../../components/statelessComponents/statelessComp';
 import AddHero from '../../components/addHero/addHero';
+import './style.css'
 
 export class Main extends Component {
 
